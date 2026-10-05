@@ -1,4 +1,3 @@
-```yaml
 name: Build mod
 
 on:
@@ -25,12 +24,6 @@ jobs:
         with:
           gradle-version: 9.5.1
 
-      - name: Check project files
-        run: |
-          pwd
-          ls -la
-          find . -maxdepth 4 \( -name "build.gradle" -o -name "build.gradle.kts" -o -name "settings.gradle" -o -name "settings.gradle.kts" \)
-
       - name: Build mod
         working-directory: ./KelpClient 1/greenmod
         run: gradle build --no-daemon
@@ -42,4 +35,3 @@ jobs:
           path: |
             KelpClient 1/greenmod/build/libs/*.jar
             !KelpClient 1/greenmod/build/libs/*-sources.jar
-```
